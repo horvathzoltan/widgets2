@@ -2,8 +2,16 @@ QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
+message(QMAKE_PLATFORM: $$QMAKE_PLATFORM)
+message(QMAKE_COMPILER: $$QMAKE_COMPILER)
+message(QMAKE_COMPILER_DEFINES: $$QMAKE_COMPILER_DEFINES)
+message(MAKEFILE_GENERATOR: $$MAKEFILE_GENERATOR)
+
+mingw: message(MINGW)
+msvc: message(MSVC)
+
 CONFIG += c++1z
-win32:QMAKE_CXXFLAGS += /std:c++17
+msvc:QMAKE_CXXFLAGS += /std:c++17
 
 # The following define makes your compiler emit warnings if you use
 # any Qt feature that has been marked deprecated (the exact warnings
